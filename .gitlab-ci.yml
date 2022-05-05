@@ -25,36 +25,36 @@ Ansible lint:
   tags:
     - delegated
 
-Docker zabbix-agent:
-  stage: deployment test
-  script:
-    - molecule test -s default
-  tags:
-    - aws
+# Docker zabbix-agent:
+#   stage: deployment test
+#   script:
+#     - molecule test -s default
+#   tags:
+#     - aws
 
-AWS zabbix-agent:
-  variables:
-    AWS_REGION: us-east-1
-  stage: deployment test
-  script:
-    - molecule test -s cloud-aws-direct
-  tags:
-    - aws
+# AWS zabbix-agent:
+#   variables:
+#     AWS_REGION: us-east-1
+#   stage: deployment test
+#   script:
+#     - molecule test -s cloud-aws-direct
+#   tags:
+#     - aws
 
-.AWS zabbix-agent:
-  variables:
-    EPC_REGION: AWS-EUCENTRAL
-  stage: deployment test
-  script:
-    - molecule test -s cloud-aws-delegated
-  tags:
-    - delegated
+# .AWS zabbix-agent:
+#   variables:
+#     EPC_REGION: AWS-EUCENTRAL
+#   stage: deployment test
+#   script:
+#     - molecule test -s cloud-aws-delegated
+#   tags:
+#     - delegated
 
-.EPC zabbix-agent:
-  variables:
-    EPC_REGION: EPAM-BY2
-  stage: deployment test
-  script:
-    - molecule test -s cloud-epc-delegated
-  tags:
-    - delegated
+# .EPC zabbix-agent:
+#   variables:
+#     EPC_REGION: EPAM-BY2
+#   stage: deployment test
+#   script:
+#     - molecule test -s cloud-epc-delegated
+#   tags:
+#     - delegated

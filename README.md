@@ -1,7 +1,7 @@
-Role Name
-=========
+zabbix-agent
+============
 
-A brief description of the role goes here.
+Installing and maintaining zabbix-agent for RedHat/Debian.
 
 Requirements
 ------------
@@ -23,9 +23,14 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
+    - name: "Install zabbix agent"
+      hosts: all
+
       roles:
-         - { role: username.rolename, x: 42 }
+        - role: lean_delivery.zabbix_agent
+          zabbix_agent_server: "test.zabbix.com"
+          zabbix_agent_serveractive: "test.zabbix.com"
+          zabbix_agent_hostmetadata: "test metadata"
 
 License
 -------
