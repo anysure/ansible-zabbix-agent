@@ -3,9 +3,8 @@
   become: True
   package:
     name:
-      - libselinux-python
-      - policycoreutils-python
-      - libsemanage-python
+      - python3-libselinux
+      - policycoreutils-python-utils
     state: present
   register: status
   retries: 10
